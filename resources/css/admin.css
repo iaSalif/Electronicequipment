@@ -1,0 +1,19 @@
+.admin-header, .admin-footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+}
+
+.admin-sidebar {
+    width: 200px;
+    background-color: #f4f4f4;
+    padding: 15px;
+    float: left;
+    height: 100vh;
+}
+
+.content {
+    margin-left: 220px;
+    padding: 20px;
+}

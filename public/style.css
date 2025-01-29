@@ -1,0 +1,269 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+*{
+    user-select: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* background-image: url('/Public/images/backgroundA.png')!important; */
+    background-size: cover; /* Pour couvrir toute la page*/ 
+    background-repeat: no-repeat; /*Pour éviter que l'image se répète*/
+}
+
+#produits {
+    width: 100%;
+    margin: auto; /* Centrer le carousel */
+}
+.carousel-item {
+    height: 500px; /* Hauteur fixe */
+    overflow: hidden; /* Masquer le débordement */
+}
+.carousel-item img {
+    width: 100%; /* Prendre toute la largeur */
+    height: 100%; /* Prendre toute la hauteur */
+    object-fit: cover; /* Couvrir le conteneur */
+}
+.nav-link{
+    text-decoration: none;
+    color: currentColor;
+}
+
+.nav-link:hover{
+    color: chartreuse;
+}
+
+.navbar{
+    width: 100%;
+    height: 100px;
+    background-color: #fff;
+    box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.25);  
+    display: flex;
+    align-items: center;
+}
+.fixe_moi {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar .container-fluid { 
+    width: 100%;
+    padding: 0 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media (max-width: 992px) {
+    .navbar .container-fluid {
+        padding: 0 5%;
+    }
+}
+
+.navbar-brand img{
+    width: 140px;
+    height: 66px;
+    letter-spacing: 3px;
+}
+
+.navbar-nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    letter-spacing: 3px;
+}
+
+.nav-item a{
+    text-decoration: none;
+}
+.nav-item{ 
+    text-align: center;
+    display: flex;
+    margin-inline: 15px;
+    font-size: 18px;
+    letter-spacing: 3px;
+    color: #102447;
+    padding: 5px 0;
+    transition: all 0.1s ease;
+    cursor: pointer;
+} 
+
+.nav-item:hover {
+    border-bottom: 3px solid #64d6f4;
+}
+
+.navbar-toggler{
+    background-color: #274d8a;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    color: #fff;
+    transition: all 0.5s ease;
+} 
+@media (max-width: 768px) {
+    /* Lorsque la navigation est ouverte */
+    .navbar-collapse .show{
+        display: flex !important; /* Affiche les éléments de navigation */
+        flex-direction: column; /* Colonne pour les petits écrans */
+        width: 100%; /* Prend toute la largeur */
+    }
+
+    header .nav-item {
+        padding: 15px; /* Améliore le clic */
+        font-size: 18px; /* Ajuste la taille de la police */
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        padding: px 0;
+        margin-bottom: 5px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+        color: #274d8a;
+        
+        }
+}
+
+header .item-button a:hover {
+    background-color: #64d6f4;
+}
+
+/* Modal */
+.modal-dialog {
+    margin: 0;
+    width: 438px; /* Correction de la classe */
+}
+
+@media (max-width: 450px) {
+    .modal-dialog {
+        width: 90%; /* Largeur responsive */
+    }
+}
+
+.modal-content {
+    border-radius: 0;
+    height: 100vh;
+    overflow-y: auto; /* Correction pour permettre le défilement */
+    background-color: #102447;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #fefefe;
+}
+
+.modal-header img {
+    width: 146px;
+    height: 64px;
+    margin-top: 17.5px;
+}
+
+.modal-header .btn-close {
+    background: transparent;
+    opacity: 1;
+}
+
+.modal-header i {
+    color: #fefefe;
+    font-size: 30px;
+}
+
+.modal-body {
+    width: 88%;
+    margin: 0 auto;
+    padding: 75px 0 0 0;
+    flex: unset;
+}
+
+.modal-body .modal-line {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 7px 0;
+    margin-bottom: 50px;
+    cursor: pointer;
+    transition: all 0.5s ease;
+    color: #274d8a;
+}
+
+.modal-body .modal-line:hover {
+    color: #fefefe;
+    border-bottom: 1px solid #fefefe;
+}
+
+.modal-line a{ 
+    font-size: 17px;
+    font-weight: 500;
+    letter-spacing: 2.5px;
+    color: #fefefe;
+    text-decoration: none;
+}
+
+.modal-line a{
+    color: gra;
+    font-size: 30px;
+    width: 35px;
+    margin-right: 15px;
+    padding: 0 0 3px 3px;
+}
+
+.card {
+    transition: transform 0.2s; /* Effet de survol */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Zoom au survol */
+}
+section .container h1, h2{
+    color: black 
+}
+/* Sélecteur corrigé pour cibler h1 à l'intérieur de .contain */
+.contain h1 {
+    font-size: 28px; 
+    white-space: nowrap; /* Assure que le texte ne se casse pas */
+    overflow: hidden;    /* Masque l'élément qui dépasse */
+    display: inline-block; /* Nécessaire pour appliquer l'animation à l'élément inline */
+    
+    /* Définition de l'animation */
+    animation: marquee 15s linear infinite; /* Animation de défilement */
+}
+
+/* Définition de l'animation marquee */
+@keyframes marquee {
+    0% {
+        transform: translateX(100%); /* Position de départ : hors de l'écran à droite */
+    }
+    100% {
+        transform: translateX(-100%); /* Position d'arrivée : hors de l'écran à gauche */
+    }
+}
+
+section .ia{
+    color: black !important;
+}
+section .black{
+    color: black !important;
+}
+.container a{
+    text-decoration: none;
+}
+.col-md-4 {
+    transition: transform 0.2s; /* Effet de survol */
+    border: 12%;
+
+
+}
+.col-md-4:hover {
+    transform: scale(1.05); /* Zoom au survol */
+}

@@ -1,0 +1,509 @@
+/* POPPINS FONT */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+
+body {
+    background: url("#");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 110vh;
+    background: rgba(39, 39, 39, 0.4);
+}
+
+.nav {
+    position: fixed;
+    top: 0;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 100px;
+    line-height: 100px;
+    background: linear-gradient(rgba(39, 39, 39, 0.6), transparent);
+    z-index: 100;
+}
+
+.nav-logo p {
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+
+.nav-menu ul {
+    display: flex;
+}
+
+.nav-menu ul li {
+    list-style-type: none;
+}
+
+.nav-menu ul li .link {
+    text-decoration: none;
+    font-weight: 500;
+    color: #fff;
+    padding-bottom: 15px;
+    margin: 0 25px;
+}
+
+.link:hover, .active {
+    border-bottom: 2px solid #fff;
+}
+
+.nav-button .btn {
+    width: 130px;
+    height: 40px;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.4);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+#registerBtn {
+    margin-left: 15px;
+}
+
+.btn.white-btn {
+    background: rgba(255, 255, 255, 0.7);
+}
+
+.btn.white-btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.nav-menu-btn {
+    display: none;
+}
+
+.form-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 512px;
+    height: 700px;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.login-container {
+    position: absolute;
+    left: 4px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+
+.register-container {
+    position: absolute;
+    right: -520px;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    transition: .5s ease-in-out;
+}
+
+.top span {
+    color: #fff;
+    font-size: small;
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.top span a {
+    font-weight: 500;
+    color: #fff;
+    margin-left: 5px;
+}
+
+header {
+    color: #fff;
+    font-size: 30px;
+    text-align: center;
+    padding: 10px 0 30px 0;
+}
+
+.two-forms {
+    display: flex;
+    gap: 10px;
+}
+
+.input-field {
+    font-size: 15px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    height: 50px;
+    width: 100%;
+    padding: 0 10px 0 45px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    transition: .2s ease;
+}
+
+.input-field:hover, .input-field:focus {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+::-webkit-input-placeholder {
+    color: #fff;
+}
+
+.input-box i {
+    position: relative;
+    top: -35px;
+    left: 17px;
+    color: #fff;
+}
+
+.submit {
+    font-size: 15px;
+    font-weight: 500;
+    color: black;
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    background: rgba(255, 255, 255, 0.7);
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.submit:hover {
+    background: rgba(2, 255, 150, 0.5);
+    color: #fff;
+    box-shadow: 1px 5px 7px 1px rgba(0, 0, 0, 0.2);
+}
+
+.two-col {
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+    font-size: small;
+    margin-top: 10px;
+}
+
+.two-col .one {
+    display: flex;
+    gap: 5px;
+}
+
+.two label a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.two label a:hover {
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 786px) {
+    .nav-button {
+        display: none;
+    }
+    .nav-menu.responsive {
+        top: 100px;
+    }
+    .nav-menu {
+        position: absolute;
+        top: -800px;
+        display: flex;
+        justify-content: center;
+        background: rgba(255, 255, 255, 0.2);
+        width: 100%;
+        height: 90vh;
+        backdrop-filter: blur(20px);
+        transition: .3s;
+    }
+    .nav-menu ul {
+        flex-direction: column;
+        text-align: center;
+    }
+    .nav-menu-btn {
+        display: block;
+    }
+    .nav-menu-btn i {
+        font-size: 25px;
+        color: #fff;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        cursor: pointer;
+        transition: .3s;
+    }
+    .nav-menu-btn i:hover {
+        background: rgba(255, 255, 255, 0.15);
+    }
+}
+
+@media only screen and (max-width: 540px) {
+    .wrapper {
+        min-height: 100vh;
+    }
+    .form-box {
+        width: 100%;
+        height: 500px;
+    }
+    .register-container, .login-container {
+        width: 100%;
+        padding: 0 20px;
+    }
+    .register-container .two-forms {
+        flex-direction: column;
+        gap: 0;
+    }
+}
+
+
+
+
+/* @import url("https://fonts.googleapis.com/css2 ?family=Poppins :wght@400 ;500 ;600 ;700&display=swap") ;
+
+
+body {
+    background: url("#");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden;
+}
+.wrapper{
+    Display : flex;
+    Justify-content : center;
+    Align-items : center ;
+    Min-height : 110vh ;
+    Background : rgba(39, 39, 39, 0.4);
+}
+.nav{
+    Position : fixed;
+    Top : 0 ;
+    Display : flex;
+    Justify-content : space-around;
+    Width : 100% ;
+    Height : 100px ;
+    Line-height : 100px ;
+    Background : linear-gradient(rgba(39,39,39, 0.6), transparent);
+    z-index : 100;
+}
+.nav-logo p{
+    Color : white;
+    Font-size : 25px;
+    Font-weight : 600;
+}
+.nav-menu ul{
+    Display : flex;
+}
+.nav-menu ul li{
+    List-style-type : none;
+}
+.nav-menu ul li .link{
+    Text-decoration : none;
+    Font-weight : 500;
+    Color : #fff ;
+    Padding-bottom : 15px;
+    Margin : 0 25px;
+}
+.link :hover, .active{
+    Border-bottom : 2px solid #fff;
+}
+.nav-button .btn{
+    Width : 130px;
+    Height : 40px ;
+    Font-weight : 500 ;
+    Background : rgba(255, 255, 255, 0.4);
+    Border : none;
+    Border-radius : 30px;
+    Cursor : pointer;
+    Transition : .3s ease ;
+}
+.btn :hover{
+    Background : rgba(255, 255, 255, 0.3);
+}
+#registerBtn{
+    Margin-left : 15px;
+}
+.btn.white-btn{
+    Background : rgba(255, 255, 255, 0.7);
+}
+.btn.btn.white-btn :hover{
+    Background : rgba(255, 255, 255, 0.5);
+}
+.nav-menu-btn{
+    Display : none;
+}
+.form-box{
+    Position : relative;
+    Display : flex;
+    Align-items : center;
+    Justify-content : center;
+    Width : 512px;
+    Height : 420px ;
+    Overflow : hidden;
+    z-index : 2;
+}
+.login-container{
+    Position : absolute;
+    Left : 4px;
+    Width : 500px;
+    Display : flex;
+    Flex-direction : column;
+    Transition : .5s ease-in-out;
+}
+.register-container{
+    Position : absolute;
+    Right : -520px;
+    Width : 500px;
+    Display : flex;
+    Flex-direction : column;
+    Transition : .5s ease-in-out;
+}
+.top span{
+    Color : #fff ;
+    Font-size : small;
+    Padding : 10px 0 ;
+    Display : flex ;
+    Justify-content : center;
+}
+.top span a{
+    Font-weight : 500;
+    Color : #fff;
+    Margin-left : 5px;
+}
+Header{
+    Color : #fff;
+    Font-size : 30px;
+    Text-align : center;
+    Padding : 10px 0 30px 0;
+}
+.two-forms{
+    Display : flex;
+    Gap : 10px;
+}
+.input-field{
+    Font-size : 15px;
+    Background : rgba(255, 255, 255, 0.2);
+    Color : #fff;
+    Height : 50px;
+    Width : 100%;
+    Padding : 0 10px 0 45px;
+    Border : none;
+    Border-radius : 30px;
+    Outline : none;
+    Transition : .2s ease;
+}
+.input-field :hover, .input-field :focus{
+    Background : rgba(255, 255, 255, 0.25);
+}
+::-webkit-input-placeholder{
+    Color : #fff;
+}
+.input-box i{
+    Position : relative;
+    Top : -35px;
+    Left : 17px;
+    Color : #fff;
+}
+.submit{
+    Font-size : 15px;
+    Font-weight : 500;
+    Color : black;
+    Height : 45px;
+    Width : 100%;
+    Border : none;
+    Border-radius : 30px;
+    Outline : none;
+    Background : rgba(255, 255, 255, 0.7) ;
+    Cursor : pointer ;
+    Transition : .3s ease-in-out ;
+}
+.submit :hover{
+    Background : rgba(255, 255, 255, 0.5) ;
+    Box-shadow : 1px 5px 7px 1px rgba(0, 0, 0, 0.2) ;
+}
+.two-col{
+    Display : flex ;
+    Justify-content : space-between ;
+    Color : #fff ;
+    Font-size : small ;
+    Margin-top : 10px ;
+}
+.two-col .one{
+    Display : flex ;
+    Gap : 5px ;
+}
+.two label a{
+    Text-decoration : none ;
+    Color : #fff ;
+}
+.two label a :hover{
+    Text-decoration : underline ;
+}
+@media only screen and (max-width : 786px){
+    .nav-button{
+        Display : none ;
+    }
+    .nav-menu.responsive{
+        Top : 100px ;
+    }
+    .nav-menu{
+        Position : absolute ;
+        Top : -800px ;
+        Display : flex ;
+        Justify-content : center ;
+        Background : rgba(255, 255, 255, 0.2) ;
+        Width : 100% ;
+        Height : 90vh ;
+        Backdrop-filter : blur(20px) ;
+        Transition : .3s ;
+    }
+    .nav-menu ul{
+        Flex-direction : column ;
+        Text-align : center ;
+    }
+    .nav-menu-btn{
+        Display : block ;
+    }
+    .nav-menu-btn i{
+        Font-size : 25px ;
+        Color : #fff ;
+        Padding : 10px ;
+        Background : rgba(255, 255, 255, 0.2) ;
+        Border-radius : 50% ;
+        Cursor : pointer ;
+        Transition : .3s ;
+    }
+    .nav-menu-btn i :hover{
+        Background : rgba(255, 255, 255, 0.15) ;
+    }
+}
+@media only screen and (max-width : 540px) {
+    .wrapper{
+        Min-height : 100vh ;
+    }
+    .form-box{
+        Width : 100% ;
+        Height : 500px ;
+    }
+    .register-container, .login-container{
+        Width : 100% ;
+        Padding : 0 20px ;
+    }
+    .register-container .two-forms{
+        Flex-direction : column ;
+        Gap : 0 ;
+    }
+}  */
