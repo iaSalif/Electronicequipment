@@ -1,10 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AppController;
-use app\Http\Controllers\HomeController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\Admin\UserController;
@@ -14,39 +13,29 @@ use App\Http\Controllers\Connexion\LogController;
 use App\Http\Controllers\Admin\CategoryController;
 
 /*
-|--------------------------------------------------------------------------
+|----------------------------------------------------------------------
 | Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
+|----------------------------------------------------------------------
 */
-//("/inscription/page" = La route en question)
-//("[LogController::class, ...]" = La classe dans laquel la fonction est traiter)
-//("[..., "inscription"] = inscription designe le nom de lq fonction dans laquel la les action sont gere : exple = ajout, edition, listing,...)
-//("inscrption.page" = c'est le nom de la route. le nom nom qui fais reference ala route. Elle sera utiliser pour naviguer vers d'autre page et pour preciser dans quel fonction on dois traiter certaines action)
 
 Route::get("/",[AppController::class, "index"])->name("app.index");
 
 Auth::routes();
 
-//Inscription
+// Inscription
 Route::get('/inscription',[LogController::class, "inscription"])->name("inscrption.page");
 Route::post('/inscription',[LogController::class, "inscription_action"])->name("inscription.action");
 
-//Connexion
+// Connexion
 Route::get('/connexion',[LogController::class, "connexion"])->name("connexion.page");
 Route::post('/connexion',[LogController::class, "connexion_action"])->name("connexion.action");
 
+// Routes sécurisées pour les administrateurs
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
-    
     // Tableau de bord principal
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::get('/', [AdminController::class, 'index'])->name('admin.index');
 
     // Gestion des utilisateurs
-    Route::get('/my-account', [UserController::class, 'index'])->name('users.index');
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
     Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     Route::post('/users', [UserController::class, 'store'])->name('users.store');
@@ -75,13 +64,6 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
     Route::get('/orders/{id}', [OrderController::class, 'show'])->name('orders.show');
     Route::put('/orders/{id}/status', [OrderController::class, 'updateStatus'])->name('orders.updateStatus');
-
-    
 });
-
-    Route::get('/admin', [AdminController::class, 'index'])->name('admin.dashboard');
-
-
-Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
