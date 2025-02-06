@@ -21,16 +21,23 @@ use App\Http\Controllers\ShopController;
 
 Route::get("/",[AppController::class, "index"])->name("app.index");
 Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
+// Route::get('/product/{id}', [ProductController::class, 'show'])->name('produt.show');
+
+Route::prefix('admin')->group(function () {
+    Route::get('product/{id}', [ProductController::class, 'show'])->name('admin.product.show');
+});
+
+
 
 Auth::routes();
 
 // Inscription
-Route::get('/inscription',[LogController::class, "inscription"])->name("inscrption.page");
+Route::get('/inscription',[LogController::class, "inscription"])->name("inscription.page");
 Route::post('/inscription',[LogController::class, "inscription_action"])->name("inscription.action");
 
 // Connexion
 Route::get('/connexion',[LogController::class, "connexion"])->name("connexion.page");
-Route::post('/connexion',[LogController::class, "connexion_action"])->name("connexion.action");
+Route::post('/connexion/action',[LogController::class, "connexion_action"])->name("connexion.action");
 
 // Routes sécurisées pour les administrateurs
 Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(function () {
@@ -45,6 +52,9 @@ Route::middleware(['auth', 'admin'])->prefix('admin')->name('admin.')->group(fun
     Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
+    Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
+    Route::get('/admin/product/{id}', [ProductController::class, 'show'])->name('admin.product.show');
+
 
     // Gestion des produits
     Route::get('/products', [ProductController::class, 'index'])->name('products.index');

@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request; 
 use App\Models\Product;
-
 
 class ProductController extends Controller
 {
@@ -54,4 +53,12 @@ class ProductController extends Controller
         $product->delete();
         return redirect()->route('admin.products.index');
     }
+
+    public function show($id)
+    {
+        $product = Product::findOrFail($id);
+        return view('admin.product.show', compact('product'));
+    }
+
 }
+

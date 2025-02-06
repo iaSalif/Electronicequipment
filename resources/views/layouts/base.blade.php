@@ -136,8 +136,8 @@
                                                     </span>
                                                 </div>
                                             </li>
-                                            <li><a href="index.htm" class="nav-link menu-title">Home</a></li>
-                                            <li><a href="shop.html" class="nav-link menu-title">Shop</a></li>
+                                            <li><a href="{{ route('app.index') }}" class="nav-link menu-title">Home</a></li>
+                                            <li><a href="{{ route('shop.index')}}" class="nav-link menu-title">Shop</a></li>
                                             <li><a href="cart/list.html" class="nav-link menu-title">Cart</a></li>
                                             <li><a href="about-us.html" class="nav-link menu-title">About Us</a></li>
                                             <li><a href="contact-us.html" class="nav-link menu-title">Contact Us</a>
@@ -192,13 +192,13 @@
 
                                                         @else
                                                             <li>
-                                                                <a href="{{ route('user.index')}}" class="d-block">My Account</a>
+                                                                {{-- <a href="{{ route('users.index')}}" class="d-block">My Account</a> --}}
                                                             </li>  
                                                         @endif
                                                         <li>
-                                                            <a href="{{ route('deconnexion')}}" onclick="event.preventDefault();document.getElementbyId('frmlogout');submit();" class="d-block">Logout</a>
+                                                            {{-- <a href="{{ route('deconnexion')}}" onclick="event.preventDefault();document.getElementbyId('frmlogout');submit();" class="d-block">Logout</a>
                                                             <form id="frmlogout" action="{{ route('deconnexion') }}" method="POST"></form>
-                                                            @csrf
+                                                            @csrf --}}
                                                         </li>
                                                     @else
                                                         <li>

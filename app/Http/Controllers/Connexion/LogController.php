@@ -37,17 +37,22 @@ class LogController extends Controller
         return redirect()->route('connexion.page')->with("successInscription", "registration successful");
     }
 
-    public function connexion_action(ConnexionRequest $request){
-       $credentials=$request->validated();
-
-       if(Auth::attempt($credentials)){
-        $request->session()->regenerate();
-
-        return redirect();
-       }
-
-
-        return redirect()->route('connexion.page')->with("successInscription", "registration successful");
+    public function connexion_action(ConnexionRequest $request)
+    {
+        $credentials = $request->validated();
+    
+        if (Auth::attempt($credentials)) {
+            $request->session()->regenerate();
+    
+            // Redirection vers une page d'accueil ou tableau de bord
+            return redirect()->route('inscription')->with('status', 'Connexion réussie');
+        }
+    
+        // Redirection avec un message d'erreur si les identifiants sont incorrects
+        return redirect()->route('connexion.page')->withErrors([
+            'email' => 'Les informations d’identification sont incorrectes.',
+        ])->withInput();
     }
+    
 
 }
