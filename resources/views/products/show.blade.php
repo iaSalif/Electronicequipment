@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('layouts.base')
 
 @section('content')
     <h1>{{ $product->name }}</h1>

@@ -5,6 +5,9 @@
         nav svg{
             height: 20px;
         }
+        .product-box .product-details h5{
+            width: 100%
+        }
     </style>
 @endpush
 @section('content')
@@ -452,13 +455,13 @@
                         <div class="product-box">
                             <div class="img-wrapper">
                                 <div class="front">
-                                    <a href="{{ route('admin.product.show', $product->id) }}">
+                                    <a href="{{ route('products.show', $product->id) }}">
                                         <img src="{{ asset('assets/images/fashion/product/front/' . $product->image) }}"
                                             class="bg-img blur-up lazyload" alt="{{ $product->name }}">
                                     </a>
                                 </div>
                                 <div class="back">
-                                    <a href="{{ route('admin.product.show', $product->id) }}">
+                                    <a href="{{ route('products.show', $product->id) }}">
                                         <img src="{{ asset('assets/images/fashion/product/back/' . $product->image) }}"
                                             class="bg-img blur-up lazyload" alt="{{ $product->name }}">
                                     </a>
@@ -497,7 +500,7 @@
                                     </ul>
                                 </div>
                                 <div class="main-price">
-                                    <a href="{{ route('admin.product.show', $product->id) }}" class="font-default">
+                                    <a href="{{ route('shop.product.details',['slug'=>$product->slug]) }}" class="font-default">
                                         <h5 class="ms-0">{{ $product->name }}</h5>
                                     </a>
                                     <div class="listing-content">

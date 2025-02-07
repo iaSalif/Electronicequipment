@@ -1,4 +1,4 @@
 @extends('layouts.base')
 @section('base')
-    <h1>Admin Dashboard</h1>
+    <h1>Accueil</h1>
 @endsection

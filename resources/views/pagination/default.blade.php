@@ -33,7 +33,7 @@
                                 <a class="page-link" href="javascript:void(0)">{{ $page }}</a>
                             </li> 
                         @else
-                            <li class="page-item">
+                            <li class="page-item disable">
                                 <a class="page-link" href="{{ $url }}">{{ $page }}</a>
                             </li>
                         @endif
@@ -41,8 +41,9 @@
                 @endif
             @endforeach
             @if ($paginator->hasMorePages())
-                <li class="page-item">
-                    <a href="{{ $paginator->nextPageUrl() }}" class="page-link" aria-label="Next">
+                <li class="page-item active">
+                    <a href="{{ $paginator->nextPageUrl() }}" class="page-link" aria-label="Next"
+                        style="color:#6c757d;">
                         <span aria-hidden="true">
                             <i class="fas fa-chevron-right"></i>
                         </span>

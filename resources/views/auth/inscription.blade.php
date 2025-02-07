@@ -87,7 +87,7 @@
                         </div>
                     </form>
                 </div>
-                <p><a href="{{ route('connexion.page') }}" class="theme-color">Already have an account?</a></p>
+                <p><a href="{{ route('connexion.action') }}" class="theme-color">Already have an account?</a></p>
             </div>
         </div>
     </div>

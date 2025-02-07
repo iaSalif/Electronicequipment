@@ -23,6 +23,20 @@ class LogController extends Controller
     }
 
     public function inscription_action(InscriptionRequest $request){
+        $credentials = $request->only('email', 'password');
+
+        if (Auth::attempt($credentials)) {
+            // Connexion réussie
+            return redirect()->route('dashboard')->with('success', 'Connexion réussie !');
+        } else {
+        // Identifiants incorrects
+        return back()->withErrors(['email' => 'Ces identifiants sont incorrects.']);
+    }
+
+        // Vérification de l'existence de l'email
+        if (User::where('email', $request->input('email'))->exists()) {
+            return back()->withErrors(['email' => 'Cet email est déjà utilisé.']);
+        }
         $user = user::create([
             'nom' => $request->input("name"),
             'prenom' => $request->input("prenom"),

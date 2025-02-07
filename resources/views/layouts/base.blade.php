@@ -187,25 +187,25 @@
                                                     @auth
                                                         @if (Auth::user()->is_admin === 'is_admin')
                                                         <li>
-                                                            <a href="{{ route('admin.index')}}" class="d-block">Dashboard</a>
+                                                            <a href="{{ route('index')}}" class="d-block">Dashboard</a>
                                                         </li>
 
                                                         @else
                                                             <li>
-                                                                {{-- <a href="{{ route('users.index')}}" class="d-block">My Account</a> --}}
+                                                                <a href="" class="d-block">My Account</a>
                                                             </li>  
                                                         @endif
                                                         <li>
-                                                            {{-- <a href="{{ route('deconnexion')}}" onclick="event.preventDefault();document.getElementbyId('frmlogout');submit();" class="d-block">Logout</a>
+                                                            <a href="{{ route('deconnexion')}}" onclick="event.preventDefault();document.getElementbyId('frmlogout');submit();" class="d-block">Logout</a>
                                                             <form id="frmlogout" action="{{ route('deconnexion') }}" method="POST"></form>
-                                                            @csrf --}}
+                                                            @csrf 
                                                         </li>
                                                     @else
                                                         <li>
-                                                            <a href="{{ route('connexion.page')}}" class="d-block">Login</a>
+                                                            <a href="{{ route('connexion')}}" class="d-block">Login</a>
                                                         </li>
                                                         <li>
-                                                            <a href="{{ route('inscription.action')}}" class="d-block">Register</a>
+                                                            <a href="{{ route('inscription.page')}}" class="d-block">Register</a>
                                                         </li>
                                                     @endauth
                                                         
@@ -308,7 +308,7 @@
                             <div class="footer-content">
                                 <ul>
                                     <li>
-                                        <a href="{{ ('index.htm') }}" class="font-dark">Home</a>
+                                        <a href="{{ ('index') }}" class="font-dark">Home</a>
                                     </li>
                                     <li>
                                         <a href="shop.html" class="font-dark">Shop</a>
